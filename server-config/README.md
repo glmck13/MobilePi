@@ -1,6 +1,6 @@
 
-# Configuring IPsec VPN server
-These instructions assume your Pi sits on a private network behind a public-facing home router.
+# Configuring IPsec VPN server (IKEv2 using server-side certificate & client EAP-MSCHAPv2 authentication)
+These instructions assume your Pi sits on a private 192.168.1.0 network behind a public-facing home router.
 
 1. apt-get install the following packages on your Pi:
 ```
@@ -29,3 +29,6 @@ ln -s /etc/letsencrypt/archive/[your domain]/privkey1.pem /etc/ipsec.d/private/p
 ```
 Following the cerbot instructions, update root's crontab to renew your certificate once (or more) per day.
 The sample crontab.root file in the repository will renew your cert at 5:30AM daily.
+
+4. In /etc/sysctl.conf uncomment the line "net.ipv4.ip_forward=1".  In addition, update /etc/rc.local
+to configure iptables on reboot: 

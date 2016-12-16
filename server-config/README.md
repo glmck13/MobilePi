@@ -35,4 +35,4 @@ to configure iptables on reboot (see sample file in repository).
 
 - Follow the instructions on your home router to forward UDP ports 4500 & 500 to your Pi.
 
-- Configure /etc/ipsec.conf and /etc/ipsec.secrets (see same files in repository).
+- Configure /etc/ipsec.conf and /etc/ipsec.secrets (see sample files in repository).

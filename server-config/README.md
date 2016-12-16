@@ -13,7 +13,7 @@ libstrongswan
 libstrongswan-standard-plugins
 ```
 - Register a public domain name for your home router.  I have a dynamic DNS name registered through dyndns.org,
-which my home router updates on every reboot.
+which is updated by my home router on every reboot.
 
 - Get an X.509 certificate for your server.  Certificates are available through https://letsencrypt.org/.
 A utility to register and renew your certificate is available from https://certbot.eff.org/.

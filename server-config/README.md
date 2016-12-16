@@ -15,6 +15,9 @@ libstrongswan-standard-plugins
 - Register a public domain name for your home router.  I have a dynamic DNS name registered through dyndns.org,
 which is updated by my home router on every reboot.
 
+- Follow the instructions on your home router to forward TCP port 443 (for certificate updates) and
+UDP ports 4500 & 500 (for IPsec) to your Pi.
+
 - Get an X.509 certificate for your server.  Certificates are available through https://letsencrypt.org/.
 A utility to register and renew your certificate is available from https://certbot.eff.org/.
 Select Software="None of the above", and System="Debian (other)" on the main page for instructions
@@ -31,7 +34,5 @@ The sample crontab.root file in the repository will renew your cert at 5:30AM da
 
 - In /etc/sysctl.conf uncomment the line "net.ipv4.ip_forward=1".  In addition, update /etc/rc.local
 to configure iptables on reboot (see sample file in repository).
-
-- Follow the instructions on your home router to forward UDP ports 4500 & 500 to your Pi.
 
 - Configure /etc/ipsec.conf and /etc/ipsec.secrets (see sample files in repository).

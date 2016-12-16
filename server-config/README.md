@@ -12,7 +12,7 @@ libcharon-extra-plugins
 libstrongswan
 libstrongswan-standard-plugins
 ```
-2. Register a public domain name for your server.  I have a dynamic DNS name registered through dyndns.org,
+2. Register a public domain name for your home router.  I have a dynamic DNS name registered through dyndns.org,
 which my home router updates on every reboot.
 
 3. Get an X.509 certificate for your server.  Certificates are available through https://letsencrypt.org/.
@@ -27,8 +27,12 @@ ln -s /etc/letsencrypt/archive/[your domain]/chain1.pem /etc/ipsec.d/cacerts/cha
 ln -s /etc/letsencrypt/archive/[your domain]/privkey1.pem /etc/ipsec.d/private/privkey.pem
 
 ```
-Following the cerbot instructions, update root's crontab to renew your certificate once (or more) per day.
+4. Following the cerbot instructions, update root's crontab to renew your certificate once (or more) per day.
 The sample crontab.root file in the repository will renew your cert at 5:30AM daily.
 
-4. In /etc/sysctl.conf uncomment the line "net.ipv4.ip_forward=1".  In addition, update /etc/rc.local
-to configure iptables on reboot: 
+5. In /etc/sysctl.conf uncomment the line "net.ipv4.ip_forward=1".  In addition, update /etc/rc.local
+to configure iptables on reboot (see sample file in repository).
+
+6. Follow the instructions on your home router to forward UDP ports 4500 & 500 to your Pi.
+
+7. Configure /etc/ipsec.conf and /etc/ipsec.secrets (see same files in repository).

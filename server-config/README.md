@@ -36,3 +36,5 @@ The sample crontab.root file in the repository will renew your cert at 5:30AM da
 to configure iptables on reboot (see sample file in repository).
 
 - Configure /etc/ipsec.conf and /etc/ipsec.secrets (see sample files in repository).
+
+- Reboot your Pi.

@@ -27,3 +27,5 @@ ln -s /etc/letsencrypt/archive/[your domain]/chain1.pem /etc/ipsec.d/cacerts/cha
 ln -s /etc/letsencrypt/archive/[your domain]/privkey1.pem /etc/ipsec.d/private/privkey.pem
 
 ```
+Following the cerbot instructions, update root's crontab to renew your certificate once (or more) per day.
+The sample crontab.root file in the repository will renew your cert at 5:30AM daily.

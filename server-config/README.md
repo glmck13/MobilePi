@@ -1,5 +1,5 @@
 
-# Configure IKEv2/IPsec VPN server using server-side certificate & client EAP-MSCHAPv2 authentication
+# Configure IKEv2/IPsec VPN server using server-side certificate & client-side EAP-MSCHAPv2 authentication
 These instructions assume your Pi sits on a private 192.168.1.0 network behind a public-facing home router.
 
 - apt-get install the following packages on your Pi:

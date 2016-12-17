@@ -22,3 +22,12 @@ ln -s /etc/ssl/certs/DST_Root_CA_X3.pem /etc/ipsec.d/cacerts/DST_Root_CA_X3.pem
 ```
 
 - Next, configure /etc/ipsec.conf and /etc/ipsec.secrets (see sample files in repository).
+
+- You have two options for starting the VPN:
+```
+ipsec up yourvpnname
+```
+or
+```
+charon-cmd --profile ikev2-eap --host yourvpnserver.domain.name --identity yourvpnname --cert /etc/ipsec.d/cacerts/DST_Root_CA_X3.pem
+```

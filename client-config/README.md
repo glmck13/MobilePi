@@ -1,4 +1,4 @@
-# Configure IKEv2/IPsec VPN client using server-side certificate & client-side EAP-MSCHAPv2 authentication
+# Configure VPN client
 
 - apt-get install the following packages on your Pi:
 ```

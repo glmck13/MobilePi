@@ -1,4 +1,4 @@
-# Configure VPN client
+# Client config
 apt-get install the following packages on your Pi:
 ```
 libcharon-extra-plugins

@@ -13,7 +13,7 @@ strongswan-starter
 ```
 The letsencrypt cert on the VPN server is signed by Digital Signature Trust (DST).
 In order to establish a chain of trust on the client, DST's certificate needs to be
-installed under /etc/ipsec.d/cacerts.  Fortunately, DSTs cert is already installed under
+populated under /etc/ipsec.d/cacerts.  Fortunately, DSTs cert is already installed under
 /etc/ssl/certs, so it's a simple matter to just link the certficate between the two
 directories:
 ```

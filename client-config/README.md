@@ -30,3 +30,17 @@ ipsec up yourvpnname
 ```
 charon-cmd --profile ikev2-eap --host yourvpnserver.domain.name --identity yourvpnname --cert /etc/ipsec.d/cacerts/DST_Root_CA_X3.pem
 ```
+# Tethering iPhone
+apt-get install the following packages on your Pi:
+```
+ipheth-utils
+libimobiledevice-utils
+libmtp-runtime
+usbmuxd
+
+```
+Add the following entry to /etc/network/interfaces:
+```
+allow-hotplug eth1
+iface eth1 inet dhcp
+```

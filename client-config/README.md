@@ -37,7 +37,6 @@ ipheth-utils
 libimobiledevice-utils
 libmtp-runtime
 usbmuxd
-
 ```
 Add the following entry to /etc/network/interfaces:
 ```

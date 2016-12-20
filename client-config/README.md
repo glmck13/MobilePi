@@ -2,8 +2,8 @@
 apt-get install the following packages on your Pi:
 ```
 strongswan
-libcharon-extra-plugins
 libstrongswan-extra-plugins
+libcharon-extra-plugins
 charon-cmd
 ```
 The letsencrypt cert on the VPN server is signed by Digital Signature Trust (DST).

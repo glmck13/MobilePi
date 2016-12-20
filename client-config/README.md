@@ -37,6 +37,6 @@ Add the following entry to /etc/network/interfaces to automatically configure th
 ```
 allow-hotplug eth1
 iface eth1 inet dhcp
-    post-up /usr/sbin/ipsec up ---yourvpnname---
-    pre-down /usr/sbin/ipsec down ---yourvpnname---
+    post-up /usr/sbin/ipsec up yourvpnname
+    pre-down /usr/sbin/ipsec down yourvpnname
 ```

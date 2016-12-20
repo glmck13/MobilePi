@@ -4,13 +4,9 @@ These instructions assume your Pi sits on a private 192.168.1.0 network behind a
 
 apt-get install the following packages on your Pi:
 ```
-libcharon-extra-plugins
-libstrongswan
-libstrongswan-standard-plugins
 strongswan
-strongswan-charon
-strongswan-libcharon
-strongswan-starter
+libstrongswan-extra-plugins
+libcharon-extra-plugins
 ```
 Register a public domain name for your home router.  I have a dynamic DNS name registered through dyndns.org,
 which is updated by my home router on every reboot.  

@@ -33,8 +33,10 @@ libimobiledevice-utils
 libmtp-runtime
 usbmuxd
 ```
-Add the following entry to /etc/network/interfaces:
+Add the following entry to /etc/network/interfaces to automatically configure the interface & IPsec tunnel:
 ```
 allow-hotplug eth1
 iface eth1 inet dhcp
+    post-up /usr/sbin/ipsec up ---yourvpnname---
+    pre-down /usr/sbin/ipsec down ---yourvpnname---
 ```

@@ -20,10 +20,10 @@ Select Software="None of the above", and System="Debian (other)" on the main pag
 on downloading & running the "cerbot-auto" utility.  After running the utility the first time, install the
 various .pem files under /etc/ipsec.d by linking back to /etc/letsencrypt:
 ```
-ln -s /etc/letsencrypt/archive/[your domain]/fullchain1.pem /etc/ipsec.d/certs/fullchain.pem
-ln -s /etc/letsencrypt/archive/[your domain]/cert1.pem /etc/ipsec.d/certs/cert.pem
-ln -s /etc/letsencrypt/archive/[your domain]/chain1.pem /etc/ipsec.d/cacerts/chain.pem
-ln -s /etc/letsencrypt/archive/[your domain]/privkey1.pem /etc/ipsec.d/private/privkey.pem
+ln -s /etc/letsencrypt/live/[your domain]/fullchain.pem /etc/ipsec.d/certs/fullchain.pem
+ln -s /etc/letsencrypt/live/[your domain]/cert.pem /etc/ipsec.d/certs/cert.pem
+ln -s /etc/letsencrypt/live/[your domain]/chain.pem /etc/ipsec.d/cacerts/chain.pem
+ln -s /etc/letsencrypt/live/[your domain]/privkey.pem /etc/ipsec.d/private/privkey.pem
 ```
 Following the cerbot instructions, update root's crontab to renew your certificate once (or more) per day.
 The sample crontab.root file in the repository will renew your cert at 5:30AM daily.  

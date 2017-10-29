@@ -12,7 +12,7 @@ Register a public domain name for your home router.  I have a dynamic DNS name r
 which is updated by my home router on every reboot.  
 
 Follow the instructions on your home router to forward TCP port 443 (for certificate updates) and
-UDP ports 4500 & 500 (for IPsec) to your Pi.  
+UDP ports 4500 & 500 (for IPsec) to your Pi.  Also, if possible, add a commend to the router to direct traffic for the client subnet (192.168.10.0/24) to the Pi.  That should enable hosts on your home network connect to remote clients while they're attached.  
 
 Get an X.509 certificate for your server.  Certificates are available through https://letsencrypt.org/.
 A utility to register and renew your certificate is available from https://certbot.eff.org/.

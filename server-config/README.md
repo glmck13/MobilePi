@@ -38,6 +38,6 @@ Reboot your Pi.
 ## References
 The following are some useful reference sites I used to distill the information above:
 - https://www.strongswan.org/
-- https://dcamero.azurewebsites.net/strongswan-ubuntu-1604-ios-9.html
+- https://dcamero.azurewebsites.net/
 - http://thomas.irmscher.bayern/crypto/VPN-with-Pi-StrongSwan-IKEv2-and-EAP-MSCHAPv2-for-Windows-Phone-8.1.html
 

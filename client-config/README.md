@@ -5,6 +5,7 @@ strongswan
 libstrongswan-extra-plugins
 libcharon-extra-plugins
 charon-cmd
+resolvconf
 ```
 The letsencrypt cert on the VPN server is signed by Digital Signature Trust (DST).
 In order to establish a chain of trust on the client, DST's certificate needs to be

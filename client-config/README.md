@@ -26,6 +26,7 @@ ipsec up yourvpnname
 ```
 charon-cmd --profile ikev2-eap --host yourvpnserver.domain.name --identity yourvpnname --cert /etc/ipsec.d/cacerts/DST_Root_CA_X3.pem
 ```
+If your connection freezes intermittently, you may have a problem with packet fragmentation if large packets inside the tunnel don't fit within the MTU defined on the encapsulating link.  To work around this, decrease the MTU size for the tunnel by editing the "mtu" value within /etc/strongswan.d/charon/kernel-netlink.conf.
 # iPhone tethering
 apt-get install the following packages on your Pi:
 ```

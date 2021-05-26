@@ -14,6 +14,7 @@ populated under /etc/ipsec.d/cacerts.  Fortunately, DSTs cert is already install
 directories:
 ```
 ln -s /usr/share/ca-certificates/mozilla/DST_Root_CA_X3.crt /etc/ipsec.d/cacerts/DST_Root_CA_X3.pem
+ln -s /usr/share/ca-certificates/mozilla/ISRG_Root_X1.crt /etc/ipsec.d/cacerts/ISRG_Root_X1.pem
 ```
 
 Next, configure /etc/ipsec.conf and /etc/ipsec.secrets (see sample files in repository).  

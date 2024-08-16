@@ -1,11 +1,7 @@
 # Client config
-apt-get install the following packages on your Pi:
+Install the following packages on your Pi:
 ```
-strongswan
-libstrongswan-extra-plugins
-libcharon-extra-plugins
-charon-cmd
-resolvconf
+apt install strongswan libstrongswan-extra-plugins libcharon-extra-plugins charon-cmd resolvconf
 ```
 The letsencrypt cert on the VPN server is signed by Internet Security Research Group (ISRG).  See [this article](https://letsencrypt.org/2019/04/15/transitioning-to-isrg-root.html) for details.
 In order to establish a chain of trust on the client, ISRG's certificate needs to be
@@ -29,12 +25,9 @@ charon-cmd --profile ikev2-eap --host yourvpnserver.domain.name --identity yourv
 ```
 If your connection freezes intermittently, you may have a problem with packet fragmentation if large packets inside the tunnel don't fit within the MTU defined on the encapsulating link.  To work around this, decrease the MTU size for the tunnel by editing the "mtu" value within /etc/strongswan.d/charon/kernel-netlink.conf.
 # iPhone tethering
-apt-get install the following packages on your Pi:
+Install the following packages on your Pi:
 ```
-ipheth-utils
-libimobiledevice-utils
-libmtp-runtime
-usbmuxd
+apt install ipheth-utils libimobiledevice-utils libmtp-runtime usbmuxd
 ```
 Add the following entry to /etc/network/interfaces to automatically configure the interface & IPsec tunnel:
 ```

@@ -1,8 +1,12 @@
 # Client config
+
+## Install required packages
 Install the following packages on your Pi:
 ```
 apt install strongswan libstrongswan-extra-plugins libcharon-extra-plugins charon-cmd resolvconf
 ```
+
+## Install Certificate Authority (CA) certs
 The letsencrypt cert on the VPN server is signed by Internet Security Research Group (ISRG).  See [this article](https://letsencrypt.org/2019/04/15/transitioning-to-isrg-root.html) for details.
 In order to establish a chain of trust on the client, ISRG's certificate needs to be
 populated under /etc/ipsec.d/cacerts.  Fortunately, ISRG's cert is already installed under
@@ -13,8 +17,14 @@ ln -s /usr/share/ca-certificates/mozilla/ISRG_Root_X1.crt /etc/ipsec.d/cacerts/I
 ln -s /usr/share/ca-certificates/mozilla/DST_Root_CA_X3.crt /etc/ipsec.d/cacerts/DST_Root_CA_X3.pem
 ```
 
+## Enter VPN settings
 Next, configure /etc/ipsec.conf and /etc/ipsec.secrets (see sample files in repository).  
 
+## Set up DNS (updated May, 2025
+If you notice that Strongswan fails to update the DNS settings on your host after the VPN tunnel starts, check out the documentation for its [resolve plugin](
+https://docs.strongswan.org/docs/latest/plugins/resolve.html).  In my case I needed to changfe the iface parameter to wlo2 on my Ubuntu laptop to get things to work.
+
+## Start VPN
 You have two options for starting the VPN (both must be run as root):
 ```
 ipsec up yourvpnname

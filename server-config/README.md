@@ -26,12 +26,11 @@ ln -s /etc/letsencrypt/live/[your domain]/privkey.pem /etc/ipsec.d/private/privk
 Following the cerbot instructions, update root's crontab to renew your certificate once (or more) per day.
 The sample crontab.root file in the repository will renew your cert at 5:30AM daily.  
 
-In /etc/sysctl.conf uncomment the line "net.ipv4.ip_forward=1".  In addition, update /etc/rc.local
-to configure iptables on reboot (see sample file in repository).  
-
-Configure /etc/ipsec.conf and /etc/ipsec.secrets (see sample files in repository).  
-
-Reboot your Pi.
+In /etc/sysctl.conf uncomment the line "net.ipv4.ip_forward=1".  Then add the following entry to root's crontab to configure iptables on reboot:
+```
+@reboot /usr/sbin/iptables -t nat -A POSTROUTING -s 192.168.10.0/24 -o eth0 -j MASQUERADE
+```  
+Lastly, configure /etc/ipsec.conf and /etc/ipsec.secrets (see sample files in repository), and reboot your Pi.
 
 ## References
 The following are some useful reference sites I used to distill the information above:

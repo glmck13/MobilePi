@@ -16,11 +16,12 @@ directories:
 ln -s /usr/share/ca-certificates/mozilla/ISRG_Root_X1.crt /etc/ipsec.d/cacerts/ISRG_Root_X1.pem
 ln -s /usr/share/ca-certificates/mozilla/DST_Root_CA_X3.crt /etc/ipsec.d/cacerts/DST_Root_CA_X3.pem
 ```
+On some Debian/Ubuntu systems, the apparmor software may block the IPsec subsystem from accessing these symlinks.  In this case, check the rules in /etc/apparmor.d/local/usr.lib.ipsec.charon, and potentially add the directive: #include <abstractions/ssl_keys>
 
 ## Enter VPN settings
 Next, configure /etc/ipsec.conf and /etc/ipsec.secrets (see sample files in repository).  
 
-## Set up DNS (updated May, 2025
+## Adjust DNS settings if necessary
 If you notice that Strongswan fails to update the DNS settings on your host after the VPN tunnel starts, check out the documentation for its [resolve plugin](
 https://docs.strongswan.org/docs/latest/plugins/resolve.html).  In my case I needed to changfe the iface parameter to wlo2 on my Ubuntu laptop to get things to work.
 
